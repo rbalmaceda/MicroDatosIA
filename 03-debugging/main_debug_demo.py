@@ -2,12 +2,15 @@
 Demo principal para mostrar cómo depurar desde `main` a otro módulo.
 Ejecuta varias llamadas que permiten usar `breakpoint()` o `python -m pdb` y seguir la ejecución.
 """
+
 from helper_module import compute_statistics, transform_and_sum
 
 
 def generate_sample_data(n=10):
     """Genera datos de ejemplo: una secuencia de números con algo de ruido."""
+
     import random
+
     random.seed(0)
     return [round(random.uniform(0, 100) + (i * 0.5), 4) for i in range(n)]
 
@@ -27,5 +30,5 @@ def main():
         print(f"  {k}: {v}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

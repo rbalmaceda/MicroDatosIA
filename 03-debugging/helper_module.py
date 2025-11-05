@@ -15,6 +15,7 @@ def compute_statistics(values):
     Returns:
         dict: {'mean': ..., 'std': ..., 'max': ...}
     """
+    
     if not values:
         raise ValueError("La lista 'values' no puede estar vacía")
 
@@ -32,11 +33,11 @@ def compute_statistics(values):
     processed = [round(x, 3) for x in values]
 
     return {
-        'mean': mean,
-        'std': std,
-        'max': maximum,
-        'processed': processed,
-        'count': n,
+        "mean": mean,
+        "std": std,
+        "max": maximum,
+        "processed": processed,
+        "count": n,
     }
 
 
@@ -45,6 +46,7 @@ def transform_and_sum(values, multiplier=1.0):
 
     Esta función llama a compute_statistics internamente para que puedas "step into".
     """
+
     if multiplier == 0:
         # ejemplo de rama a inspeccionar
         return 0
@@ -54,4 +56,4 @@ def transform_and_sum(values, multiplier=1.0):
 
     stats = compute_statistics(transformed)
 
-    return stats['mean'] * stats['count']
+    return stats["mean"] * stats["count"]
